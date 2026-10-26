@@ -6,9 +6,23 @@ namespace WebKalkulator.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(KalModels c)
         {
-            return View();
+            switch (c.Opertation)
+                {
+                case '+': c.Result = c.Number2 + c.Number1;
+                    break;
+                case '-':
+                    c.Result = c.Number2 - c.Number1;
+                    break;
+                case '*':
+                    c.Result = c.Number2 * c.Number1;
+                    break;
+                case '/':
+                    c.Result = c.Number2 / c.Number1;
+                    break;
+            }
+            return View(c);
         }
 
         public IActionResult Privacy()

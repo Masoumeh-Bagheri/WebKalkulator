@@ -1,0 +1,28 @@
+﻿@addTagHelper *,Microsaft.ASPNetCore.TagHelpers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "Index Test";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a asp-controller="Home" 
+    asp-action="Index" 
+    asp-fragment="Contact" 
+    @* asp-host="onlineshop.ir" *@
+    asp-protocol="https"
+    asp-route-id="10">Go to HomeControler</a>
+    <br />
+    <a asp-controller="Test" asp-action="Index" asp-fragment="Go to TestControler" asp-route-id="20">Go to TestControler</a>
+    <br />
+    <a asp-controller="Person" asp-action="Index">Go to PersonControler</a>
+    <br />
+</body>
+</html>

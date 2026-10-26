@@ -1,0 +1,33 @@
+﻿@model PersonVm;
+@{
+    ViewData["title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <a asp-controller="Home" asp-action="Index">Go to HomeControler</a>
+    <br />
+    <a asp-controller="Test" asp-action="Index" asp-fragment="Go to TestControler" asp-route-id="20">Go to TestControler</a>
+    <br />
+    <a asp-controller="Person" asp-action="Index">Go to PersonControler</a>
+    <br />
+    <h1>Index</h1>
+    <form asp-controller="Person" asp-action="ShowPerson" method="post">
+        <label asp-for="@Model.Id"></label>
+        <input asp-for="@Model.Id" />
+        <br />
+        <label asp-for="@Model.FirstName"></label>
+        <input asp-for="@Model.FirstName" />
+        <br />
+        <label asp-for="@Model.Lastname"></label>
+        <input asp-for="@Model.Lastname" />
+        <br />
+        <input type="submit" value="Send" />
+    </form>
+</body>
+</html>

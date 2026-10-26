@@ -1,0 +1,28 @@
+﻿@model PersonVm;
+@{
+    ViewData["title"] = "Show Person";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a asp-controller="Home" asp-action="Index">Go to HomeControler</a>
+    <br />
+    <a asp-controller="Test" asp-action="Index" asp-fragment="Go to TestControler" asp-route-id="20">Go to TestControler</a>
+    <br />
+    <a asp-controller="Person" asp-action="Index">Go to PersonControler</a>
+    <br />
+    <h1>Show Person</h1>
+    @Model.Id
+    .
+    .
+    @Model.FirstName
+    .
+    .
+    @Model.Lastname
+</body>
+</html>
