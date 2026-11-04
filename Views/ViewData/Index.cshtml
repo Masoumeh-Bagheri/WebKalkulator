@@ -1,0 +1,22 @@
+﻿
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    @{if(ViewData["Username"]!=null)
+        {
+            <h1>Username: @ViewData["Username"]</h1>
+        }
+        else
+        {
+            <h1>there is not Username.</h1>
+        }
+    }
+</body>
+</html>
