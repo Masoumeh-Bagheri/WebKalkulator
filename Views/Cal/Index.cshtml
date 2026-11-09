@@ -11,15 +11,15 @@
         <label asp-for="Number1"></label>
         <input asp-for="Number1" value="@Model.Number1" />
         <br />
-        <label asp-for="Number2" hidden="true"></label>
-        <input asp-for="Number2" value="@Model.Number2" hidden="true"/>
+        <label asp-for="Number2" ></label>
+        <input asp-for="Number2" value="@Model.Number2"/>
         <br />
         <strong>@Model.Result</strong>
         <br />
-        <input type="submit" asp-for="Operation" value="+" />
-        <input type="submit" asp-for="Operation" value="-" />
-        <input type="submit" asp-for="Operation" value="*" />
-        <input type="submit" asp-for="Operation" value="/" />
+        <input type="submit" asp-for="Operation" value="@ECalOperation.Sum" />
+        <input type="submit" asp-for="Operation" value="@ECalOperation.Min" />
+        <input type="submit" asp-for="Operation" value="@ECalOperation.Mul"/>
+        <input type="submit" asp-for="Operation" value="@ECalOperation.Div"/>
     </form>
     <button>1</button>
     <button>2</button>
@@ -38,13 +38,13 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script>
             $(document).ready(function(){
-            $('button').click(function(){
-            var valueTxt=$(this).text();
+                $('button').click(function(){
+                    var valueTxt=$(this).text();
                 
-            if($('#Number1').val()==='0'  || valueTxt=='C')
-                $('#Number1').val('')
-            $('#Number1').val($('#Number1').val()+valueTxt);
-            });
+                    if($('#Number1').val()==='0')
+                        $('#Number1').val('');
+                    $('#Number1').val($('#Number1').val()+valueTxt);
+                });
             });
     </script>
 </body>
