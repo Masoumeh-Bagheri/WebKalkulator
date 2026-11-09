@@ -2,13 +2,13 @@
 {
     public enum ECalOperation
     {
-        [Discription("Sum Numbers")]
+        //[Discription("Sum Numbers")]
         Sum,
-        [Discription("Min Numbers")]
+        //[Discription("Min Numbers")]
         Min,
-        [Discription("Mul Numbers")]
+        //[Discription("Mul Numbers")]
         Mul,
-        [Discription("Div Numbers")]
+        //[Discription("Div Numbers")]
         Div
     }
 }
