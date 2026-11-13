@@ -9,14 +9,17 @@ namespace WebKalkulator.Controllers
     {
         public IActionResult Index()
         {
-            
-            SetSession(SessionNamesConst.UserName, "MB");
-            ViewBag.UserName = GetSession(SessionNamesConst.UserName);
+
+            //SetSession(SessionNamesConst.UserName, "MB Mit Session");
+            //ViewBag.UserName = GetSession(SessionNamesConst.UserName);
+            ViewBag.UserName=GetCookies(CookiesNamesConst.UserName);
             return View();
         }
 
         public IActionResult Privacy()
         {
+            SetCookies(CookiesNamesConst.UserName, "MB mit Cookies");
+            
             return View();
         }
 

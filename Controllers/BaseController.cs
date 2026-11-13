@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebKalkulator.AppConst;
 
 namespace WebKalkulator.Controllers
 {
@@ -11,6 +12,15 @@ namespace WebKalkulator.Controllers
         protected string GetSession(string sessionName)
         {
             return HttpContext.Session.GetString(sessionName);
+        }
+        //Cookies Fanction
+        protected void SetCookies(string cookiesName, string cookiesValue)
+        {
+            Response.Cookies.Append(cookiesName, cookiesValue);
+        }
+        protected string GetCookies(string cookiesName)
+        {
+            return Request.Cookies[cookiesName];
         }
     }
 }
