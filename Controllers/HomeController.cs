@@ -1,28 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebKalkulator.AppConst;
 using WebKalkulator.Models;
 
 namespace WebKalkulator.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public IActionResult Index(KalModels c)
+        public IActionResult Index()
         {
-            switch (c.Opertation)
-                {
-                case '+': c.Result = c.Number2 + c.Number1;
-                    break;
-                case '-':
-                    c.Result = c.Number2 - c.Number1;
-                    break;
-                case '*':
-                    c.Result = c.Number2 * c.Number1;
-                    break;
-                case '/':
-                    c.Result = c.Number2 / c.Number1;
-                    break;
-            }
-            return View(c);
+            
+            SetSession(SessionNamesConst.UserName, "MB");
+            ViewBag.UserName = GetSession(SessionNamesConst.UserName);
+            return View();
         }
 
         public IActionResult Privacy()
